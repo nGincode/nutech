@@ -36,5 +36,4 @@ next-env.d.ts
 /server/config/config.json
 /logs
 
-.next
 node_modules
