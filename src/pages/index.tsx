@@ -44,8 +44,8 @@ export default function Index({ userData, setuserData }: any) {
                                             </div>
                                         </div>
 
-                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2022 </span>
-                                        <span className="d-block mt-12 mb-8 h3"> $13,908 </span>
+                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2023 </span>
+                                        <span className="d-block mt-12 mb-8 h3"> Rp. 500 jt </span>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +69,8 @@ export default function Index({ userData, setuserData }: any) {
                                             </div>
                                         </div>
 
-                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2022 </span>
-                                        <span className="d-block mt-12 mb-8 h3"> $7,949 </span>
+                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2023 </span>
+                                        <span className="d-block mt-12 mb-8 h3"> Rp 50 jt </span>
                                     </div>
                                 </div>
                             </div>
@@ -89,8 +89,8 @@ export default function Index({ userData, setuserData }: any) {
                                             <div></div>
                                         </div>
 
-                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2022 </span>
-                                        <span className="d-block mt-12 mb-8 h3"> $5,129 </span>
+                                        <span className="hp-caption mt-4 d-block fw-normal hp-text-color-black-60"> April 2023 </span>
+                                        <span className="d-block mt-12 mb-8 h3"> Rp. 450 jt </span>
                                     </div>
                                 </div>
                             </div>
@@ -102,11 +102,11 @@ export default function Index({ userData, setuserData }: any) {
                             <div className="mb-18 col-12">
                                 <div className="row align-items-center justify-content-between">
                                     <div className="hp-flex-none w-auto col">
-                                        <span className="d-block hp-p1-body">Users Trafic</span>
+                                        <span className="d-block hp-p1-body">Traffic</span>
                                     </div>
 
                                     <div className="hp-flex-none w-auto col">
-                                        <span className="hp-p1-body d-block">Past 30 Days</span>
+                                        <span className="hp-p1-body d-block">30 Days</span>
                                     </div>
                                 </div>
                             </div>
