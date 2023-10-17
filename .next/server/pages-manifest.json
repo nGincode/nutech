@@ -2,11 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/auth/login": "pages/auth/login.html",
-  "/": "pages/index.html",
-  "/permission": "pages/permission.html",
-  "/profile": "pages/profile.html",
-  "/stock": "pages/stock.html",
-  "/users": "pages/users.html",
-  "/404": "pages/404.html"
+  "/": "pages/index.js",
+  "/stock": "pages/stock.js",
+  "/permission": "pages/permission.js"
 }

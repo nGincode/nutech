@@ -151,7 +151,7 @@ export default function Chart() {
                 enabled: false,
             },
             grid: {
-                borderColor: "#B2BEC3",
+                borderColor: "#c47a27",
                 opacity: 1,
             },
             plotOptions: {
@@ -182,18 +182,18 @@ export default function Chart() {
                 labels: {
                     style: {
                         colors: [
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
-                            "#B2BEC3",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
+                            "#000000",
                         ],
                         fontSize: "12px",
                     },
@@ -222,7 +222,7 @@ export default function Chart() {
             yaxis: {
                 labels: {
                     style: {
-                        colors: ["#636E72"],
+                        colors: ["#000000"],
                         fontSize: "14px",
                     },
                 },
