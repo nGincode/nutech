@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     }
                 }).catch(error => {
                     if (error.code === 'ECONNABORTED') {
-                        toast.error('Maaf database sedang mengalami gagal, harap kembali lagi nanti');
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
                     } else {
                         toast.error(error.message);
                     }
