@@ -37,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     method: "POST",
                     url: "/api/login",
                     data: data,
+                    timeout: 5000,
                 }).then((res) => {
                     if (res.data.status === 404) {
                         toast.error(res.data.message)
@@ -53,6 +54,12 @@ export default function App({ Component, pageProps }: AppProps) {
                             res.data.data.permission = null;
                         }
                         setuserData(res.data.data);
+                    }
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal, harap kembali lagi nanti');
+                    } else {
+                        toast.error(error.message);
                     }
                 });
             } catch (error: any) {

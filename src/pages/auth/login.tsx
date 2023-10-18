@@ -10,6 +10,9 @@ import {
 import Image from "next/image";
 
 export default function login({ submitLogin }: any) {
+    if (typeof document !== "undefined") {
+        (document as any).title = 'NUTECH';
+    }
 
     return (
 
