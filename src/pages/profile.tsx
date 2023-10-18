@@ -466,7 +466,7 @@ export default function Profile({ userData, setuserData }: any) {
                                     </div>
 
                                     <div className="col-12">
-                                        <Input label="Phone" variant="standard" required type="text" className="border-b-1" name="phone" id="nophone" defaultValue={userData.phone} />
+                                        <Input label="Phone" variant="standard" required type="number" className="border-b-1" name="phone" id="nophone" defaultValue={userData.phone} />
                                     </div>
 
                                     <div className="col-12">

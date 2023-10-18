@@ -256,7 +256,7 @@ export default function Users({ userData, setuserData }: any) {
                                     },
                                     {
                                         name: 'phone',
-                                        type: 'text',
+                                        type: 'number',
                                         id: 'nophoneEdit',
                                         required: true
                                     },
