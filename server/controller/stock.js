@@ -30,7 +30,7 @@ const getId = async (req, res) => {
 const putId = async (req, res) => {
   const { uuid } = req.params;
   const { users_id, users_uuid } = req.user;
-  const { name, price_buy, price_sell, image, imgDel } = req.body;
+  const { name, priceBuy, priceSell, image, imgDel } = req.body;
 
   const Stock = await stock.findOne({
     where: { uuid: uuid },
@@ -76,8 +76,8 @@ const putId = async (req, res) => {
   const data = {
     stock: req.body.stock,
     name: name,
-    price_buy: price_buy,
-    price_sell: price_sell,
+    price_buy: priceBuy,
+    price_sell: priceSell,
     img: imgData,
   };
 
@@ -93,7 +93,9 @@ const putId = async (req, res) => {
 const get = async (req, res) => {
   const { users_id, users_uuid, email, username, permission } = req.user;
 
-  const stockDb = await stock.findAll();
+  const stockDb = await stock.findAll({
+    order: [["id", "DESC"]],
+  });
   const data = stockDb.map((val) => {
     return {
       img: val.img,

@@ -37,6 +37,7 @@ export default function Spwp({ userData, setuserData }: any) {
                     method: "POST",
                     url: URLAPI,
                     data: data,
+                    timeout: 5000,
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -45,6 +46,17 @@ export default function Spwp({ userData, setuserData }: any) {
                     toast.success(res.data.massage);
                     ($('.btn-close') as any).trigger("click");
                     (document.getElementById('formCreate') as HTMLFormElement).reset();
+                    (document.getElementById('closeImg') as HTMLInputElement).click();
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);

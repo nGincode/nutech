@@ -27,6 +27,7 @@ export default function Users({ userData, setuserData }: any) {
                     method: "POST",
                     url: "/api/user",
                     data: data,
+                    timeout: 5000,
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -36,6 +37,16 @@ export default function Users({ userData, setuserData }: any) {
                     ($('.btn-close') as any).trigger("click");
                     (document.getElementById('formCreate') as HTMLFormElement).reset();
                     handleApi('view_user')
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);

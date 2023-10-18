@@ -26,6 +26,7 @@ export default function Profile({ userData, setuserData }: any) {
                     method: "PUT",
                     url: "/api/user",
                     data: data,
+                    timeout: 5000,
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -34,6 +35,16 @@ export default function Profile({ userData, setuserData }: any) {
                     setuserData(res.data.data);
                     localStorage.setItem('token', res.data.token);
                     ($('.btn-close') as any).trigger("click");
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 // toast.error(error.response.data.massage);
@@ -45,6 +56,7 @@ export default function Profile({ userData, setuserData }: any) {
                     method: "PUT",
                     url: "/api/user",
                     data: data,
+                    timeout: 5000,
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -53,6 +65,16 @@ export default function Profile({ userData, setuserData }: any) {
                     (document.getElementById("profileOldPassword") as HTMLInputElement).value = '';
                     (document.getElementById("profileConfirmPassword") as HTMLInputElement).value = '';
                     (document.getElementById("profileNewPassword") as HTMLInputElement).value = '';
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);
@@ -64,6 +86,7 @@ export default function Profile({ userData, setuserData }: any) {
                     method: "PUT",
                     url: "/api/user",
                     data: { files: file },
+                    timeout: 5000,
                     headers: {
                         'Content-Type': 'multipart/form-data',
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -71,6 +94,16 @@ export default function Profile({ userData, setuserData }: any) {
                 }).then((res: any) => {
                     toast.success(res.data.massage);
                     setuserData(res.data.data);
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);

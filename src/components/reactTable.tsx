@@ -528,6 +528,7 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
         if (type === 'edit') {
             try {
                 await axios({
+                    timeout: 5000,
                     method: "PUT",
                     url: urlData + '/' + uuid,
                     data: dataPost,
@@ -539,6 +540,16 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
                     toast.success(res.data.massage);
                     handleApi('view');
                     ($('.btn-close') as any).trigger("click");
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);
@@ -546,6 +557,7 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
         } else if (type === 'delete') {
             try {
                 await axios({
+                    timeout: 5000,
                     method: "DELETE",
                     url: urlData + '/' + uuid,
                     headers: {
@@ -560,6 +572,16 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
 
                     toast.success(res.data.massage);
                     handleApi('view')
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 toast.error(error.response.data.massage);
@@ -567,6 +589,7 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
         } else if (type === 'view') {
             try {
                 await axios({
+                    timeout: 5000,
                     method: "GET",
                     url: urlFatch + (companyActive ? "?company_id=" + JSON.parse(localStorage.getItem('companyActive') as string)?.value : ""),
                     headers: {
@@ -578,6 +601,16 @@ export default function ReactTable({ search, action, modalData, dataFatch, urlFa
                     setTimeout(() => {
                         setloading(false);
                     }, 100);
+                }).catch(error => {
+                    if (error.code === 'ECONNABORTED') {
+                        toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                    } else {
+                        if (error?.response?.data?.massage) {
+                            toast.error(error.response.data.massage);
+                        } else {
+                            toast.error(error.message);
+                        }
+                    }
                 });
             } catch (error: any) {
                 // toast.error(error.response.data.massage);
