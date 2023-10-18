@@ -31,6 +31,11 @@ export default function Profile({ userData, setuserData }: any) {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
                 }).then((res: any) => {
+                    if (!Array.isArray(res.data.data.permission.data)) {
+                        res.data.data.permission.data = JSON.parse(res.data.data.permission.data);
+                    } else {
+                        res.data.data.permission = null;
+                    }
                     toast.success(res.data.massage);
                     setuserData(res.data.data);
                     localStorage.setItem('token', res.data.token);
@@ -92,6 +97,11 @@ export default function Profile({ userData, setuserData }: any) {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
                 }).then((res: any) => {
+                    if (!Array.isArray(res.data.data.permission.data)) {
+                        res.data.data.permission.data = JSON.parse(res.data.data.permission.data);
+                    } else {
+                        res.data.data.permission = null;
+                    }
                     toast.success(res.data.massage);
                     setuserData(res.data.data);
                 }).catch(error => {

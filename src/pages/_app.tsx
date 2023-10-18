@@ -125,7 +125,7 @@ export default function App({ Component, pageProps }: AppProps) {
     //permission akses banned
     let ComponetPermission = false;
 
-    userData?.permission?.data.map((find: any) => {
+    userData?.permission?.data?.map((find: any) => {
         find.data.map((fn: any) => {
             if (fn.check) {
                 fn.data.map((f: any) => {

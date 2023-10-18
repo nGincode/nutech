@@ -114,7 +114,7 @@ export default function layout({ children = null, logOut, userData }: any) {
                 },
                 {
                     value: "Users",
-                    url: "/user",
+                    url: "/users",
                 },
             ],
             onSelect: function (event: any) {
