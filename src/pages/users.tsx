@@ -177,7 +177,7 @@ export default function Users({ userData, setuserData }: any) {
 
                                                     <div className="col-12 col-md-6">
                                                         <div className="mb-24">
-                                                            <Input type="text" required variant="standard" className="border-b-1" name="phone" label="Phone" id="nophone" />
+                                                            <Input type="number" required variant="standard" className="border-b-1" name="phone" label="Phone" id="nophone" />
                                                         </div>
                                                     </div>
 

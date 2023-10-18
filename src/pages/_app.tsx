@@ -83,6 +83,12 @@ export default function App({ Component, pageProps }: AppProps) {
                         }
                         setuserData(res.data.data);
                         setloadingFull(false);
+                    }).catch(error => {
+                        if (error.code === 'ECONNABORTED') {
+                            toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
+                        } else {
+                            toast.error(error.message);
+                        }
                     });
                 } catch (error: any) {
                     if (localStorage.getItem('token'))
