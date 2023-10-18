@@ -111,12 +111,15 @@ const get = async (req, res) => {
 
   let Permission;
   if (userPermission.view === "all") {
-    Permission = await permission.findAll();
+    Permission = await permission.findAll({
+      order: [["id", "DESC"]],
+    });
   } else {
     Permission = await permission.findAll({
       where: {
         user_id: users_id,
       },
+      order: [["id", "DESC"]],
     });
   }
 

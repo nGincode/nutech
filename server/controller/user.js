@@ -167,6 +167,7 @@ const get = async (req, res) => {
         },
       },
     ],
+    order: [["id", "DESC"]],
   });
 
   if (!User) {

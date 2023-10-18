@@ -46,7 +46,7 @@ export default function Spwp({ userData, setuserData }: any) {
                     toast.success(res.data.massage);
                     ($('.btn-close') as any).trigger("click");
                     (document.getElementById('formCreate') as HTMLFormElement).reset();
-                    (document.getElementById('closeImg') as HTMLInputElement).click();
+                    (document.getElementById('closeImg') as HTMLInputElement)?.click();
                 }).catch(error => {
                     if (error.code === 'ECONNABORTED') {
                         toast.error('Maaf database sedang mengalami gagal koneksi, harap kembali lagi nanti');
