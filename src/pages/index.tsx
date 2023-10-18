@@ -8,6 +8,7 @@ import Skelaton from '../components/skelaton';
 export default function Index({ userData, setuserData }: any) {
 
     useEffect(() => {
+        (document as any).title = 'Dashboard';
         require("./../../public/app-assets/js/cards/card-analytic.js");
         require("./../../public/app-assets/js/cards/card-advance.js");
         require("./../../public/app-assets/js/cards/card-statistic.js");

@@ -41,6 +41,7 @@ export default function Permission({ userData, setuserData }: any) {
     }
 
     useEffect(() => {
+        (document as any).title = Subject;
         setpagePermission(userData?.permission?.data?.map((val: any) => {
             return val.data.find((vall: any) => {
                 if (vall.label == Subject) {
@@ -139,6 +140,9 @@ export default function Permission({ userData, setuserData }: any) {
     return (
         <>
             <div className="row mb-32 gy-32">
+                <div className="col-12">
+                    <h1 className="hp-mb-0 text-4xl font-bold">{Subject}</h1>
+                </div>
                 <div className="col-12">
                     <div className="row justify-content-between gy-32">
                         <div className="col hp-flex-none w-auto">

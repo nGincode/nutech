@@ -71,6 +71,7 @@ export default function Users({ userData, setuserData }: any) {
     };
 
     useEffect(() => {
+        (document as any).title = Subject;
         const handleApiFirst = async (url: any, data: any = null) => {
             if (url === 'view_permission') {
                 try {
@@ -103,6 +104,9 @@ export default function Users({ userData, setuserData }: any) {
     return (
         <>
             <div className="row mb-32 gy-32">
+                <div className="col-12">
+                    <h1 className="hp-mb-0 text-4xl font-bold">{Subject}</h1>
+                </div>
                 <div className="col-12">
                     <div className="row justify-content-between gy-32">
                         <div className="col hp-flex-none w-auto">
